@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Spectral:wght@400;500;600&display=swap");
+
+:root {
+  --ink: #162b3b;
+  --muted: #4b5e69;
+  --accent: #006b66;
+  --paper: #f3f7f8;
+  --line: #dce6e8;
+  --serif: Spectral, Georgia, serif;
+  --sans: "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font: 1.075rem/1.56 var(--sans);
+}
+a { color: var(--accent); text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: .13em; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+p { margin: 0 0 .9rem; }
+p:last-child { margin-bottom: 0; }
+h1, h2, h3, h4 { margin: 0; line-height: 1.14; }
+h1, h2 { font-family: var(--serif); font-weight: 500; letter-spacing: -.035em; }
+h1 { font-size: clamp(2.55rem, 6.2vw, 5.65rem); }
+h2 { font-size: clamp(2rem, 4vw, 2.85rem); margin-bottom: 1.2rem; }
+h3, h4 { font-size: 1.33rem; font-weight: 700; margin-bottom: .5rem; }
+.subheading { margin-bottom: .8rem; }
+img { display: block; max-width: 100%; }
+.wrap { width: min(71rem, calc(100% - 4rem)); margin-inline: auto; }
+.skip { position: fixed; top: .5rem; left: .5rem; padding: .6rem; background: #fff; z-index: 5; transform: translateY(-150%); }
+.skip:focus { transform: none; }
+.site-header { border-bottom: 1px solid var(--line); }
+.header-inner { min-height: 4.5rem; display: flex; align-items: center; justify-content: space-between; gap: .75rem 2rem; }
+.brand { font: 600 1.35rem var(--serif); color: var(--ink); text-decoration: none; }
+nav, .actions, .link-row { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; align-items: center; }
+nav a { color: var(--ink); font-weight: 600; text-decoration: none; }
+nav a:hover { color: var(--accent); text-decoration: underline; }
+.layout { display: grid; grid-template-columns: 13.5rem minmax(0, 1fr); gap: clamp(2rem, 6vw, 5.5rem); padding-block: 4rem; }
+.profile { color: var(--muted); }
+.portrait { width: 100%; height: auto; aspect-ratio: 216 / 226; object-fit: cover; object-position: center 37%; border-radius: .3rem 2rem .3rem .3rem; background: var(--paper); }
+.profile-role { font-weight: 700; color: var(--ink); margin: 1rem 0 .12rem; }
+.profile-links { display: grid; justify-items: start; gap: .35rem; border-top: 1px solid var(--line); padding-top: .85rem; }
+.intro { padding-bottom: clamp(2.2rem, 5vw, 4rem); }
+.intro p { max-width: 60ch; }
+.lede { font-size: clamp(1.25rem, 2.1vw, 1.6rem); line-height: 1.4; margin-top: 1rem; font-weight: 600; }
+.actions { margin-top: 1.5rem; }
+.button { display: inline-block; padding: .58rem 1rem; border-radius: .3rem; color: #fff; background: var(--accent); font-weight: 600; text-decoration: none; }
+.button:hover { background: #005750; }
+.layout main > section:not(.intro) { border-top: 1px solid var(--line); padding-block: clamp(2rem, 4vw, 3.3rem); }
+.topics { display: flex; flex-wrap: wrap; gap: .45rem; padding: 0; margin: 0 0 1.35rem; list-style: none; }
+.topics li { background: var(--paper); border: 1px solid var(--line); padding: .2rem .65rem; border-radius: .25rem; font-size: .95rem; }
+.research-list { border-left: 3px solid var(--accent); padding-left: clamp(.9rem, 2.5vw, 1.5rem); }
+.entry { padding-block: 1.15rem; }
+.entry:first-child { padding-top: 0; }
+.entry:last-child { padding-bottom: 0; }
+.entry + .entry { border-top: 1px solid var(--line); }
+.entry p { max-width: 65ch; }
+.meta { color: var(--muted); font-size: .94rem; font-weight: 600; margin-bottom: .45rem; }
+.status { display: inline-block; color: #005750; background: #e1f0ee; padding: .05rem .48rem; border-radius: .2rem; margin-right: .3rem; }
+.status.neutral { color: var(--muted); background: var(--paper); }
+.affiliation { font-weight: 600; margin-bottom: .35rem; }
+.detail-list { margin: 0; }
+.detail-list > div {
+  display: grid;
+  grid-template-columns: minmax(9rem, 1fr) minmax(0, 2.2fr);
+  gap: .3rem 1rem;
+  padding-block: .75rem;
+  border-bottom: 1px solid var(--line);
+}
+.detail-list > div:first-child { padding-top: 0; }
+.detail-list > div:last-child { border-bottom: 0; padding-bottom: 0; }
+.detail-list dt { font-weight: 700; }
+.detail-list dd { margin: 0; }
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
+.project { border: 1px solid var(--line); padding: 1.25rem; border-radius: .3rem; }
+.project.featured { grid-column: 1 / -1; background: var(--paper); }
+.contact a { overflow-wrap: anywhere; }
+.site-footer { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line); padding-block: 1rem; color: var(--muted); }
+.cv-page { max-width: 48rem; padding-block: 2.5rem; }
+.cv-page h1 { font-size: clamp(2.4rem, 6vw, 3.7rem); }
+.cv-page h2 { font-size: 1.65rem; margin-bottom: .6rem; }
+.cv-page h3 { font-size: 1.07rem; }
+.cv-page section { border-top: 1px solid var(--line); margin-top: 1.35rem; padding-top: .9rem; }
+.cv-page ul { margin-block: .4rem 0; padding-left: 1.2rem; }
+.cv-tools { margin-bottom: 1.6rem; }
+
+@media (max-width: 48rem) {
+  .wrap { width: calc(100% - 2rem); }
+  .header-inner { flex-wrap: wrap; padding-block: .75rem; }
+  nav { gap: .25rem .95rem; font-size: .96rem; }
+  .layout { grid-template-columns: 1fr; padding-block: 1.65rem; gap: 1.7rem; }
+  .profile { display: grid; grid-template-columns: minmax(4.7rem, 7rem) minmax(0, 1fr); gap: 1rem; align-items: start; }
+  .profile-role { margin-top: 0; }
+  .profile-links { display: flex; flex-wrap: wrap; gap: .2rem .85rem; padding-top: .45rem; }
+  .name-break { display: none; }
+}
+
+@media (max-width: 34rem) {
+  .project-grid, .detail-list > div { grid-template-columns: 1fr; }
+}
+
+@media print {
+  @page { margin: 14mm; }
+  body { color: #000; font: 10pt/1.3 Georgia, serif; }
+  .cv-page { max-width: none; width: auto; padding: 0; }
+  .cv-tools { display: none; }
+  .cv-page h1 { font-size: 24pt; }
+  .cv-page h2 { font-size: 14pt; }
+  .cv-page h3 { font-size: 11pt; }
+  .cv-page section { margin-top: .7rem; padding-top: .5rem; }
+  .cv-page article, .cv-page li { break-inside: avoid; }
+  .cv-page h2, .cv-page h3 { break-after: avoid; }
+  .cv-page a { color: #000; }
+}
